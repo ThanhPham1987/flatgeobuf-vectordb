@@ -136,6 +136,10 @@ Okay, so far I tried not to talk about the tons of drawbacks and needed optimiza
 There are so many things to explore here yet so I do not want to call this section "Cons" unless I know it's an actual con. 
 
 - the current projection method is weak in comparison to tSNE or PCA but I am not (yet) aware of any better suitable method here
+- there's a "corridor" problem crated by UMAP:
+
+![image](https://github.com/user-attachments/assets/fcc099a0-d73f-482b-8a61-fbcd64ae6d6c)
+
 - it can be improved however by first transforming the cone-like structure to a cylinder and then "unrolling" the cylinder to a plane like here for fixing the problem, that unrelated points are to close to related points in the very center (don't mind the ugly unrolling please):
 
 ![](shape_morph.gif)
