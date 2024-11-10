@@ -138,7 +138,7 @@ There are so many things to explore here yet so I do not want to call this secti
 - the current projection method is weak in comparison to tSNE or PCA but I am not (yet) aware of any better suitable method here
 - it can be improved however by first transforming the cone-like structure to a cylinder and then "unrolling" the cylinder to a plane like here for fixing the problem, that unrelated points are to close to related points in the very center (don't mind the ugly unrolling please):
 
-![](shape-morph.gif)
+![](shape_morph.gif)
 
 - maybe self-organizing maps or similar spatial index methods suitable?
 - I know that bge-m3 embeddings are good, but they still might have a bias/weaknesses that might falsify the results here
@@ -158,9 +158,3 @@ I need your help. I'm developing lots of different things at the moment, all in 
 Feel free to reuse the code in this repo for whatever you like, but please reference me or this repo. I invested countless hours in open source software and would love to get a shoutout back. Also, please open an issue/discussion if you tried it or used it somewhere just so I know that it's actually beeing used :) 
 
 And of course: wouldn't mind that star! ;)
-
-
-
-
-
-
