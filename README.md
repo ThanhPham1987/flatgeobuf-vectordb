@@ -1,12 +1,12 @@
 # Flatgeobuf VectorDB
 A single static file as high throughput vector database, using the cloud-native flatgeobuf file format and http range requests. 
 
-See writing_data.ipynb for creating files and reading_data.ipynb for reading.
+See writing_data.ipynb for creating files and reading_data.ipynb for reading. Note that this is just a proof of concept, do not use in production!
 
 New to cloud-native geospatial? Check out [protomaps](https://protomaps.com/), [OpenFreeMap](https://openfreemap.org/), [COG](http://cogeo.org/) to get some inspiration how to apply solved problems in geospatial to the latent space! 
 
 ## What is this? 
-This is a simple proof of concept repository for using the flatgeobuf file format as static vector database for text and image embeddings, e.g. for lean retrieval augmented generation workflows. It is **not** about geodata and normal flatgeobuf usage!
+This is a simple proof of concept repository for using the flatgeobuf file format as static vector database for text and image embeddings, e.g. for lean retrieval augmented generation workflows. It is **not** about geodata and regular flatgeobuf usage!
 
 The magic lies in the way you can use it: just dump the single static flatgeobuf file containing millions of embeddings anywhere and access it through normal http range requests for retrieving just the data you need. No backend and no database connection needed. A standard web server like nginx or caddy will do.
 
@@ -127,6 +127,8 @@ Well, theoretically this could be very performant when the database is huge, wit
 
 An actual use case could be porduct recommendations where it mustn't be the top most similar product, but something fairly related would do too. I heard Amazon recommendations had become spookingly good so they had to drop in some nonsense in order not to scare people too much...
 
+If we somehow manage to get higher accuracy somehow, fgb could become a possible add-on for [SemanticFinder](https://do-me.github.io/SemanticFinder/). This way, the index files wouldn't need to be loaded entirely to the frontend anymore.
+
 ## Discussion 
 
 Okay, so far I tried not to talk about the tons of drawbacks and needed optimizations in this workflow but let's do so now. 
@@ -166,6 +168,9 @@ I need your help. I'm developing lots of different things at the moment, all in 
 - other datasets & queries
 - performance benchmarks
 - scientific cooperations, if you'd like to work together to write a paper that'd be incredibly much appreciated
+
+## To Do 
+- a Python requirements file
 
 Feel free to reuse the code in this repo for whatever you like, but please reference me or this repo. I invested countless hours in open source software and would love to get a shoutout back. Also, please open an issue/discussion if you tried it or used it somewhere just so I know that it's actually beeing used :) 
 
