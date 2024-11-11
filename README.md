@@ -1,6 +1,8 @@
 # Flatgeobuf VectorDB
 A single static file as high throughput vector database, using the cloud-native flatgeobuf file format and http range requests. 
 
+See writing_data.ipynb for creating files and reading_data.ipynb for reading.
+
 ## What is this? 
 This is a simple proof of concept repository for using the flatgeobuf file format as static vector database for text and image embeddings, e.g. for lean retrieval augmented generation workflows. It is **not** about geodata and normal flatgeobuf usage!
 
