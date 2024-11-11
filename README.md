@@ -1,7 +1,14 @@
 # Flatgeobuf VectorDB
 A single static file as high throughput vector database, using the cloud-native flatgeobuf file format and http range requests. 
 
-See writing_data.ipynb for creating files and reading_data.ipynb for reading. Note that this is just a proof of concept, do not use in production!
+See writing_data.ipynb for creating files and reading_data.ipynb for reading. Note that this is just a proof of concept, do not use in production! 
+
+**tl;dr**
+You have a huge static file with millions of embeddings somewhere with 50Gb but want to retrieve only relevant rows to your query. Works like this: 
+
+```python
+data = fgb.load_http("https://github.com/do-me/flatgeobuf-vectordb/raw/refs/heads/main/alice.fgb", bbox=query_bbox)
+```
 
 New to cloud-native geospatial? Check out [protomaps](https://protomaps.com/), [OpenFreeMap](https://openfreemap.org/), [COG](http://cogeo.org/) to get some inspiration how to apply solved problems in geospatial to the latent space! 
 
