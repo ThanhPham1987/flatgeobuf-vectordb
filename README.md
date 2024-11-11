@@ -132,9 +132,11 @@ Okay, so far I tried not to talk about the tons of drawbacks and needed optimiza
 - should be as performant as the webserver gets, so VERY performant in theory
 - database (fgb file) can be updated with more points gradually, no re-indexing needed
 
-### Things to explore 
-There are so many things to explore here yet so I do not want to call this section "Cons" unless I know it's an actual con. 
+### Cons 
+- a bit of client-side work (but fairly neglectable, no heavy calculations involved)
+- currently not very precise
 
+### Things to explore 
 - the current projection method is weak in comparison to tSNE or PCA but I am not (yet) aware of any better suitable method here
 - there's a "corridor" problem crated by UMAP:
 
