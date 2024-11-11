@@ -3,6 +3,8 @@ A single static file as high throughput vector database, using the cloud-native 
 
 See writing_data.ipynb for creating files and reading_data.ipynb for reading.
 
+New to cloud-native geospatial? Check out [protomaps](https://protomaps.com/), [OpenFreeMap](https://openfreemap.org/), [COG](http://cogeo.org/) to get some inspiration how to apply solved problems in geospatial to the latent space! 
+
 ## What is this? 
 This is a simple proof of concept repository for using the flatgeobuf file format as static vector database for text and image embeddings, e.g. for lean retrieval augmented generation workflows. It is **not** about geodata and normal flatgeobuf usage!
 
@@ -151,7 +153,7 @@ Okay, so far I tried not to talk about the tons of drawbacks and needed optimiza
 
 - maybe self-organizing maps or similar spatial index methods suitable?
 - I know that bge-m3 embeddings are good, but they still might have a bias/weaknesses that might falsify the results here
-- I read some discussions on HN that apparently http range requests are not as performant as requests for static files
+- I read some [discussions on HN](https://news.ycombinator.com/item?id=41635592) that apparently http range requests are not as performant as requests for static files
 - if so, one could also try to come up with an efficient R-Tree like file structure dumping files in directories that are organized accordingly but tbh I'm a big fan of protomaps too, so I like the one-file-approach a lot
 - the "span" param in the create_bbox_from_point function is crucial. If too low, nothing will be returned, if too high, all the DB. Workaround: start very low and increase with a certain (maybe logarithmic?) factor until N points are returned (or e.g. X% of the DB?)
 - need to explore other mature clients and run some performance benchmarks
