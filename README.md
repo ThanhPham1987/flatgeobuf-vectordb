@@ -116,8 +116,9 @@ The top 5 entries of the whole dataset where number 3 was number 1 from the tabl
 | 1609 | Turtle in the distance   |            0.721267 |
 | 2596 | Rabbit coming to look    |            0.720095 |
 
+Same goes for another query `enjoying nature, plants and vegetation` with span `0.19`, retrieving 33 entries and leading to yet again the third most related query. Try yourself!
 
-This is kind of cool that you can use existing cloud-native components and just hack your way together without reinventing the wheel. It sort of worked - hurray! 🎉
+It's kind of cool that you can use existing cloud-native components and just hack your way together without reinventing the wheel. It sort of worked - hurray! 🎉
 
 ## Use Cases 
 Well, theoretically this could be very performant when the database is huge, with millions of records or more and you can have tens of thousands of concurrent requests, easily handled by a single nginx or caddy. This could dramatically reduce costs or even be used in some kind of pipeline. 
@@ -160,7 +161,8 @@ Okay, so far I tried not to talk about the tons of drawbacks and needed optimiza
 I need your help. I'm developing lots of different things at the moment, all in my free time, all unpaid. Please reach out to me for whatever kind of contributions: 
 - ideas
 - code
-- performance benachmarks
+- other datasets & queries
+- performance benchmarks
 - scientific cooperations, if you'd like to work together to write a paper that'd be incredibly much appreciated
 
 Feel free to reuse the code in this repo for whatever you like, but please reference me or this repo. I invested countless hours in open source software and would love to get a shoutout back. Also, please open an issue/discussion if you tried it or used it somewhere just so I know that it's actually beeing used :) 
