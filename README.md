@@ -29,8 +29,8 @@ In the image below, dark points are related points to the query point and light 
 ![image](https://github.com/user-attachments/assets/8656bc2e-c88e-4c0d-8789-326bb337715b)
 
 ### Projections
-How can you reduce the high-dimensional vectors to 2D? There are tons of great algorithms like tSNE, PCA, UMAP, HUMAP etc. but we can only use algorithms here that respect a particular feature. When using tSNE, PCA or HUMAP you assume, that you are working on a full dataset as you are just interested in the relations and similarities between the points. However, as we are working towards a setup where all kinds of queries - so unknown vectors - can occur, the algorithm needs to be agnostic to the relations between the vectors. 
-In simple terms: we can only use UMAP or so-called projections. 
+How can you reduce the high-dimensional vectors to 2D? There are tons of great algorithms like tSNE, PCA, UMAP, HUMAP etc. but we can only use algorithms here that respect a particular feature. When using tSNE, PCA, UMAP or HUMAP you assume, that you are working on a full dataset as you are just interested in the relations and similarities between the points. However, as we are working towards a setup where all kinds of queries - so unknown vectors - can occur, the algorithm needs to be agnostic to the relations between the vectors. 
+In simple terms: we can only use so-called projections. 
 
 What are projections? 
 
@@ -39,7 +39,7 @@ Imagine a swarm of bees (objects in 3D space) in your room. You light a torch (o
 ## Writing flatgeobuf vector DB file 
 Great, so all we do now is to CREATE the flatgeobuf vector DB is:
 - for a dataset, create normal embeddings
-- then project the embeddings with an arbitrary number of dimensions (=length) to a 2D plane with X and Y coordinates
+- then project the embeddings with an arbitrary number of dimensions (=length) to a 2D plane with X and Y coordinates (e.g. with `GaussianRandomProjection`)
 - create the flatgeobuf file by using X and Y coordinates as fake lat lon (with some geographic projection)
 - dump the file somewhere
 
