@@ -28,9 +28,8 @@ In the image below, dark points are related points to the query point and light 
 
 ![image](https://github.com/user-attachments/assets/8656bc2e-c88e-4c0d-8789-326bb337715b)
 
-### Projections
-How can you reduce the high-dimensional vectors to 2D? There are tons of great algorithms like tSNE, PCA, UMAP, HUMAP etc. but we can only use algorithms here that respect a particular feature. When using tSNE, PCA, UMAP or HUMAP you assume, that you are working on a full dataset as you are just interested in the relations and similarities between the points. However, as we are working towards a setup where all kinds of queries - so unknown vectors - can occur, the algorithm needs to be agnostic to the relations between the vectors. 
-In simple terms: we can only use so-called projections. 
+### Dimensionality reduction
+Dimensionality reduction for this use case requires a method that can handle unseen queries, meaning the reduction transformation must be learned from the initial dataset and then applied consistently to new data points. While simple projections like random Gaussian projections fulfill this requirement, more sophisticated methods like PCA and a parameterized neural network version of UMAP are also suitable. These learn a transformation that respects the relationships within the training data and can then be applied to new vectors, effectively acting as learned projections. Therefore, while the method must handle individual data points independently during query time, it can leverage the information within a training dataset to learn a more effective dimensionality reduction.
 
 What are projections? 
 
@@ -149,10 +148,11 @@ Okay, so far I tried not to talk about the tons of drawbacks and needed optimiza
 ### Cons 
 - a bit of client-side work (but fairly neglectable, no heavy calculations involved)
 - currently not very precise
+- fgb fires multiple http requests per query
 
 ### Things to explore 
-- the current projection method is weak in comparison to tSNE or PCA but I am not (yet) aware of any better suitable method here
-- there's a "corridor" problem crated by UMAP:
+- the current projection method is weak, PCA and a parameterized neural network version of UMAP should be explored as alternatives (thanks [Reddit](https://www.reddit.com/r/MachineLearning/comments/1gssov1/comment/lxl9k9o/)!)
+- there's a "corridor" problem crated by randomly projecting:
 
 ![image](https://github.com/user-attachments/assets/fcc099a0-d73f-482b-8a61-fbcd64ae6d6c)
 
